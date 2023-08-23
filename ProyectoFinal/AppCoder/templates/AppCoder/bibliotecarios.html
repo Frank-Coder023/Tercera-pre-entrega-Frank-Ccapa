@@ -1,0 +1,15 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} Crear Bibliotecario {% endblock %}
+
+{% block contenido_que_cambia %}
+    <h3>Formulario - Crear Nuevo Bibliotecario</h3>
+    <form action="{% url 'bibliotecarios' %}" method="post">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <h3>{{ mensaje }}</h3>
+{% endblock %}
